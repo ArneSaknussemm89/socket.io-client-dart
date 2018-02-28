@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:html';
 
 import 'dart:typed_data';
 import 'package:logging/logging.dart';

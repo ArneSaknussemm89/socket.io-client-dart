@@ -10,7 +10,6 @@
  *
  * Copyright (C) 2017 Potix Corporation. All Rights Reserved.
  */
-import 'dart:html';
 encode(Map obj) {
   var str = '';
 

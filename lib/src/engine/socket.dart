@@ -12,8 +12,6 @@ import 'dart:convert';
  *
  * Copyright (C) 2017 Potix Corporation. All Rights Reserved.
  */
-import 'dart:html';
-
 import 'package:logging/logging.dart';
 import 'package:socket_io/src/util/event_emitter.dart';
 import 'package:socket_io_client/src/engine/parseqs.dart';
