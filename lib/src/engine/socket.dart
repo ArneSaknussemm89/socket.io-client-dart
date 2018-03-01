@@ -80,7 +80,7 @@ class Socket extends EventEmitter {
       opts['hostname'] = Uri.parse(opts['host']).host;
     }
 
-    this.secure = opts['secure'] ?? (window.location.protocol == 'https:');
+    this.secure = opts['secure'] ?? opts['secure'];
 
     if (opts['hostname'] != null && !opts.containsKey('port')) {
       // if no port is specified manually, use the protocol default
@@ -88,8 +88,8 @@ class Socket extends EventEmitter {
     }
 
     this.agent = opts['agent'] ?? false;
-    this.hostname = opts['hostname'] ?? (window.location.hostname ?? 'localhost');
-    this.port = opts['port'] ?? (window.location.port.isNotEmpty ? int.parse(window.location.port) : (this.secure ? 443 : 80));
+    this.hostname = opts['hostname'] ? opts['hostname'] : 'localhost';
+    this.port = opts['port'] ?? (this.secure ? 443 : 80);
     var query = opts['query'] ?? {};
     if (query is String)
       this.query = decode(query);
